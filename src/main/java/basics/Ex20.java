@@ -1,8 +1,6 @@
 package basics;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,57 +12,45 @@ public class Ex20 {
         int decimalNo = scanner.nextInt();
 
         List<Integer> remainderList = new ArrayList<>();
-        while(decimalNo != 0) {
+        while (decimalNo != 0) {
             int j = 0;
             int remainder = decimalNo % 16;
-            int convertedRemainder;
-            switch(remainder){
-                case 10:
-                    convertedRemainder = Integer.parseInt("A");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+            decimalNo /= 16;
+            remainderList.add(j, remainder);
+            j++;
+        }
+
+        List<String> remainderStringList = new ArrayList<>(remainderList.size());
+        for (int i : remainderList) {
+            remainderStringList.add(String.valueOf(i));
+        }
+        for (int i = 0; i < remainderStringList.size(); i++) {
+            switch (remainderStringList.get(i)) {
+                case "10":
+                    remainderStringList.set(i, "A");
                     break;
-                case 11:
-                    convertedRemainder = Integer.parseInt("B");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+                case "11":
+                    remainderStringList.set(i, "B");
                     break;
-                case 12:
-                    convertedRemainder = Integer.parseInt("C");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+                case "12":
+                    remainderStringList.set(i, "C");
                     break;
-                case 13:
-                    convertedRemainder = Integer.parseInt("D");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+                case "13":
+                    remainderStringList.set(i, "D");
                     break;
-                case 14:
-                    convertedRemainder = Integer.parseInt("E");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+                case "14":
+                    remainderStringList.set(i, "E");
                     break;
-                case 15:
-                    convertedRemainder = Integer.parseInt("F");
-                    remainderList.add(j, convertedRemainder);
-                    decimalNo /= 16;
-                    j++;
+                case "15":
+                    remainderStringList.set(i, "F");
                     break;
                 default:
-                    decimalNo /= 16;
-                    remainderList.add(j ,remainder);
-                    j++;
+                    break;
             }
         }
         StringBuilder sb = new StringBuilder();
-        Collections.reverse(remainderList);
-        for(int i = 0; i < remainderList.size(); i++) {
-            sb.append(i);
+        for (int i = 0; i < remainderStringList.size(); i++) {
+            sb.append(remainderStringList.get(i));
         }
         System.out.println("Hexadecimal number is: " + sb);
     }
