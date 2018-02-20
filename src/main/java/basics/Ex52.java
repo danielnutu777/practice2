@@ -11,7 +11,7 @@ public class Ex52 {
         int b = scanner.nextInt();
         System.out.print("Input the third number: ");
         int c = scanner.nextInt();
-        if(a + b == c){
+        if(a + b == c || a + c == b || c + b == a){
             System.out.println("The result is: true");
         }
 
