@@ -9,7 +9,7 @@ public class DataTypesEx2 {
         double inchVal = scanner.nextDouble();
         System.out.println(inchVal + " inch is " + inchVal * 0.0254);
 
-        
+
     }
 }
 /*2. Write a Java program that reads a number in inches, converts it to meters.
