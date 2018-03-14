@@ -4,23 +4,55 @@ import java.util.Scanner;
 
 public class Ex1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Input number: ");
-        int input = scanner.nextInt();
-
-
-        for (int i = 1; i <= input; i++){
-            for(int j = 1; j <= i; j++){
-                System.out.print("\t" + i + "\t");
+        System.out.print("Input number of rows : ");
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int m = n - 1;
+        int z = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = m; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int l = 0; l <= z; l++) {
+                System.out.print("*");
             }
             System.out.println();
+            z += 2;
+            m--;
+        }
+        int q = n - 1;
+        int c = 0;
+        for(int t = 0; t < n; t++){
+            for(int y = q; y > 0; y--){
+                System.out.print("*");
+            }
+            for(int x = 0; x <= c; x++){
+                System.out.print(" ");
+            }
+            System.out.println();
+            c += 2;
+            q--;
         }
     }
 }
-/*19. Write a program in Java to make such a pattern like a pyramid with a number which will repeat the number in the same row. Go to the editor
+/*21. Write a program in Java to display the pattern like a diamond. Go to the editor
 
-       1
-      2 2
-     3 3 3
-    4 4 4 4
-Click me to see the solution */
+Test Data
+Input number of rows (half of the diamond) : 7
+Expected Output :
+
+
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
+  */
